@@ -1180,7 +1180,8 @@ hr {
   color: #FFF; }
 
 .panel-motto{
-  font-size: 1em;
+  color: #FFF;
+  font-size: 0.8em;
 }
 
 .panel-subtitle {
