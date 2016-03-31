@@ -13,15 +13,10 @@
     <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
     <meta name="keywords" content="Hexo, NexT" />
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
-    <meta name="description">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="小白菜的博客">
-    <meta property="og:url" content="http://yoursite.com/archives/index.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://yoursite.com/2016/03/31/javascript事件系统/index.html">
     <meta property="og:site_name" content="小白菜的博客">
-    <meta property="og:description">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="小白菜的博客">
-    <meta name="twitter:description">
     <script type="text/javascript" id="hexo.configuration">
     var NexT = window.NexT || {};
     var CONFIG = {
@@ -51,7 +46,7 @@
         s.parentNode.insertBefore(hm, s);
     })();
     </script>
-    <div class="container one-collumn sidebar-position-left  page-archive  ">
+    <div class="container one-collumn sidebar-position-left page-post-detail ">
         <div class="headband"></div>
         <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
             <div class="header-inner">
@@ -106,13 +101,19 @@
             <div class="main-inner">
                 <div class="content-wrap">
                     <div id="content" class="content">
-                        <p>翟亚飞
-                            <br>职业：前端开发工程师
-                            <br>联系方式：</p>
-                        <ul>
-                            <li>QQ：526283019</li>
-                            <li>邮箱：15712502038@163.com</li>
-                        </ul>
+                        <div id="posts" class="posts-expand">
+                            <p>姓名:翟亚飞
+                                <br>职业:web前端工程师</p>
+                            <p>联系方式:</p>
+                            <ul>
+                                <li>QQ:526283019</li>
+                                <li>邮箱:15712502038@163.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="comments" id="comments">
+                        <div class="ds-thread" data-thread-key="关于" data-title="关于" data-url="http://yoursite.com/2016/03/31/关于/">
+                        </div>
                     </div>
                 </div>
                 <div class="sidebar-toggle">
@@ -124,7 +125,15 @@
                 </div>
                 <aside id="sidebar" class="sidebar">
                     <div class="sidebar-inner">
-                        <section class="site-overview sidebar-panel  sidebar-panel-active ">
+                        <ul class="sidebar-nav motion-element">
+                            <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+                                文章目录
+                            </li>
+                            <li class="sidebar-nav-overview" data-target="site-overview">
+                                站点概览
+                            </li>
+                        </ul>
+                        <section class="site-overview sidebar-panel ">
                             <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
                                 <img class="site-author-image" itemprop="image" src="/images/default_avatar.jpg" alt="翟亚飞" />
                                 <p class="site-author-name" itemprop="name">翟亚飞</p>
@@ -141,6 +150,11 @@
                             <div class="links-of-author motion-element">
                             </div>
                             <div class="links-of-blogroll motion-element">
+                            </div>
+                        </section>
+                        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+                            <div class="post-toc">
+                                <p class="post-toc-empty">此文章未包含目录</p>
                             </div>
                         </section>
                     </div>
@@ -185,10 +199,24 @@
     <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
     <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
     <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
-    <script type="text/javascript" id="motion.page.archive">
-    $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+    <script type="text/javascript" src="/vendors/jquery-scrollintoview/jquery.scrollintoview.min.js?v=0.5.0"></script>
+    <script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
     <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+    <script type="text/javascript">
+    var duoshuoQuery = {
+        short_name: "xiaobaicaistring"
+    };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.id = 'duoshuo-script';
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
 </body>
 
 </html>
